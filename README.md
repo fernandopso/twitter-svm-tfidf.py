@@ -43,11 +43,12 @@ nltk.download()
 # A new window should open, showing the NLTK Downloader. Press d and type all
 ```
 
-For Python 2 run the command
+or
 
 ```
 python -m nltk.downloader all
 ```
+
 
 ### psutil
 
@@ -70,3 +71,9 @@ pip install PyStemmer
 ```
 python main.py
 ```
+
+TODO
+[] Remove PyGTK in favor to use Terminal
+[] Refatory names of methods/variables/modules
+[] Test and Documentation
+

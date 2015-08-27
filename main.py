@@ -1,14 +1,12 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import os
 
-#Libraries for Interface Grafics
-import gtk, gobject, glib
-import pygtk
-pygtk.require('2.0')
+# Libraries for Interface Grafics
+import gtk
 
-#Classes implemented.
+# Classes implemented.
 from collect.Collect import Collect
 from mining.Mining import Mining
 from train.Train import Train
@@ -80,5 +78,14 @@ class MainWindows(gtk.Window):
             gtk.main_quit()
 
 if __name__ == '__main__':
-    app = MainWindows()
-    gtk.main()
+    print "=================================================================================="
+    print "=== Suport Vector Machine for tweet data mining - UFLA                        ===="
+    print "=================================================================================="
+    print """\nWelcome, this tool is divided into three steps to the tweets mining process """
+    print """\nSelect an option:\n"""
+    print """ (c) 1ª step: Collect tweets from Twitter """
+    print """ (t) 2ª step: Training some tweets """
+    print """ (p) 3ª step: Predication others tweets """
+
+    #app = MainWindows()
+    #gtk.main()
