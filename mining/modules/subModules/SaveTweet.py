@@ -8,9 +8,9 @@ import pickle
 class SaveTweet(object):
 	def savePickle(self, tweet):
 		#Salva uma versão em arquivo.
-		file_treinado = open('file_treinado.pck', 'a')
-		pickle.dump(tweet, file_treinado)
-		file_treinado.close()
+		file_trained = open('./data/file_trained.pck', 'a')
+		pickle.dump(tweet, file_trained)
+		file_trained.close()
 
 	def saveMongo(self, tweet, i):
 		#Conecta com o servidor local.

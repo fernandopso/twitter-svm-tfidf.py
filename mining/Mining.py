@@ -27,7 +27,7 @@ class Mining(gtk.Window):
         fixed = gtk.Fixed()
 
         #Label explanatory.
-        self.label = gtk.Label("Uso:\n- Selecione um arquivo de treinamento: \n(Ex: file_treinado.pck) \n\n- Selecione um arquivo de teste: \n(Ex: 2012_Dec_01_14_35_56)")
+        self.label = gtk.Label("Uso:\n- Selecione um arquivo de treinamento: \n(Ex: file_trained.pck) \n\n- Selecione um arquivo de teste: \n(Ex: 2012_Dec_01_14_35_56)")
         fixed.put(self.label, 20, 20)
 
         #Button to open file train.
