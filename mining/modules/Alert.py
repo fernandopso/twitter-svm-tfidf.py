@@ -1,13 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 import os
-#Libraries for Interface Grafics
-import gtk, gobject, glib
-import pygtk
-pygtk.require('2.0')
 
-class Alert(gtk.Window):
+class Alert:
     def __init__(self):
         super(Alert,self).__init__()
         self.set_title("Aviso")

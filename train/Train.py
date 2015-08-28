@@ -1,21 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-
-import pygtk
-pygtk.require("2.0")
-import gtk
-import glib
 import json
 import simplejson as json
 
-#Classes implemented.
 from modules.Alert import Alert
 from modules.Processing import Processing
 from modules.SaveTweet import SaveTweet
 from modules.LangDetect import LangDetect 
 
-class Train(gtk.Window):
+class Train:
     listMsgTweet = []
     tupleTweets = []
     n = 0

@@ -1,15 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
-#Libraries for Interface Grafics
-import gtk, gobject, glib
-import pygtk
-pygtk.require('2.0')
-
-class Validate(gtk.Window):
+class Validate:
     def __init__(self):
-        super(Validate,self).__init__()
+        super(Validate, self).__init__()
         self.set_title("Validate")
         self.set_size_request(300, 100)
         self.set_position(gtk.WIN_POS_CENTER)

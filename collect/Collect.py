@@ -1,27 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
 import os
 import psutil
 
-#Libraries for Interface Grafics
-import gtk, gobject, glib
-import pygtk
-pygtk.require('2.0')
-
 #Libraries for get time
-import time
-from time import sleep
 from time import gmtime, strftime
 
 #Libraries for threads.
 import thread
 import threading
-import gobject
-gtk.gdk.threads_init()
-gobject.threads_init()
 
-class Collect(gtk.Window, threading.Thread):
+class Collect:
     """docstring for Coletar"""
     stopthread = threading.Event()
     def __init__(self):

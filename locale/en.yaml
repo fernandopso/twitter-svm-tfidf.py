@@ -1,0 +1,16 @@
+dashboard: > 
+    Twitter data mining with Suport Vector Machine
+
+    ==============================================
+
+
+    The process is divided into three steps to the tweets mining process:
+
+
+    (c) 1ª step: Collect tweets from Twitter
+
+    (t) 2ª step: Training some tweets
+
+    (p) 3ª step: Predication others tweets
+
+    (x) for exit

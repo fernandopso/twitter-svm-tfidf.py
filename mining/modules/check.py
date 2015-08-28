@@ -1,17 +1,9 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
-
-import os
-
-#Libraries for Interface Grafics
-import gtk, gobject, glib
-import pygtk
-pygtk.require('2.0')
-
 from subModules.Validate import Validate
 from subModules.SaveTweet import SaveTweet
 
-class Check(gtk.Window):
+class Check:
 	tupleTweets = []
 	i = 0
 

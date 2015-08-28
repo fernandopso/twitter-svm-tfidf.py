@@ -1,13 +1,5 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-import os
-
-#Libraries for Interface Grafics
-import gtk, gobject, glib
-import pygtk
-pygtk.require('2.0')
-
 from modules.Alert import Alert
 from modules.tfidf import tfidf
 from modules.fileDir import fileDir
@@ -15,7 +7,7 @@ from modules.formatFile import FormatFile
 from modules.svm import Model
 from modules.check import Check
 
-class Mining(gtk.Window):
+class Mining:
     """docstring for Mining"""
     list_tweets = []
     def __init__(self):

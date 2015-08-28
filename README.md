@@ -5,65 +5,31 @@ Course conclusion project for collecting, training, and mining data collected fr
 
 ## Dependencies
 
-### scikit-learn
-
-Simple and efficient tools for data mining and data analysis http://scikit-learn.org/stable/install.html
-
 ```
 sudo apt-get install build-essential python-dev python-setuptools \
-                     python-numpy python-scipy \
+                     python-numpy python-scipy libblas-dev gfortran \
                      libatlas-dev libatlas3gf-base
 ```
 
-And
+### Libs
 
 ```
-pip install -U scikit-learn
+pip install -r requirements.txt
 ```
 
-### pymongo
-
-https://api.mongodb.org/python/2.0/tutorial.html
-
-```
-pip install pymongo==2
-```
-
-### nltk
-
-Natural Language Toolkit - http://www.nltk.org/
-
-```
-pip install -U nltk
-
-# After install you need download corpus from nltk
-import nltk
-nltk.download()
-
-# A new window should open, showing the NLTK Downloader. Press d and type all
-```
-
-or
+### nltk downloader - Natural Language Toolkit - http://www.nltk.org/
 
 ```
 python -m nltk.downloader all
 ```
 
-
-### psutil
-
-https://pypi.python.org/pypi/psutil
+or
 
 ```
-pip install psutil
-```
+import nltk
+nltk.download()
 
-### PyStemmer
-
-Snowball stemming algorithms, for information retrieval - https://pypi.python.org/pypi/PyStemmer/1.0.1
-
-```
-pip install PyStemmer
+# A new window should open, showing the NLTK Downloader. Press d and type all
 ```
 
 ## Run
@@ -73,7 +39,6 @@ python main.py
 ```
 
 TODO
-[] Remove PyGTK in favor to use Terminal
-[] Refatory names of methods/variables/modules
-[] Test and Documentation
-
+[ 10% ] Remove PyGTK in favor to use Terminal
+[     ] Refatory names of methods/variables/modules
+[     ] Test and Documentation
