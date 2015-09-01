@@ -17,7 +17,7 @@ sudo apt-get install build-essential python-dev python-setuptools \
 pip install -r requirements.txt
 ```
 
-### nltk downloader - Natural Language Toolkit - http://www.nltk.org/
+### Natural Language Toolkit - http://www.nltk.org/
 
 ```
 python -m nltk.downloader all
@@ -39,6 +39,9 @@ python main.py
 ```
 
 TODO
-[ 10% ] Remove PyGTK in favor to use Terminal
+
+[ 15% ] Remove PyGTK in favor to use Terminal
+
 [     ] Refatory names of methods/variables/modules
+
 [     ] Test and Documentation

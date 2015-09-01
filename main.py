@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import yaml
 import sys
-from collect.Collect import Collect
+from collect.collect import Collect
 from mining.Mining import Mining
 from train.Train import Train
 
@@ -29,18 +29,24 @@ class Cli(object):
         print 'Finished'
 
 if __name__ == '__main__':
-    c = Cli()
-    c.dashboard()
-    c.waiting_input()
+    cli = Cli()
+    cli.dashboard()
+    cli.waiting_input()
 
-    while c.option != "x":
-        c.clear_terminal()
+    while cli.option != "x":
+        cli.clear_terminal()
 
-        if c.option == "c":
-            Collect()
-        elif c.option == "t":
+        if cli.option == "c":
+            c = Collect()
+            c.connect_with_twitter()
+            c.search_tweets()
+            c.save()
+        elif cli.option == "t":
             Train()
-        elif c.option == "p":
+        elif cli.option == "p":
             Mining()
 
-    c.finished()
+        cli.dashboard()
+        cli.waiting_input()
+
+    cli.finished()
