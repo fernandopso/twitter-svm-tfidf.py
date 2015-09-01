@@ -41,7 +41,7 @@ class Collect(object):
         self.tweets = self.api.search(q='ufla')
 
     def save(self):
-        file_path = './data/collect_' + strftime("%Y_%b_%d", gmtime())
+        file_path = './data/collect_' + strftime("%Y_%m_%d", gmtime())
         file_trained = open(file_path, 'a')
         for tweet in self.tweets:
             pickle.dump(tweet, file_trained)
