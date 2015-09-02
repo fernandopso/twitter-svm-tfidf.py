@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
-import tweepy
-import pickle
-
+from os import environ
+from tweepy import OAuthHandler, API
 from time import gmtime, strftime
+from json import dump
 
 class Collect(object):
     """
@@ -18,17 +17,17 @@ class Collect(object):
     """
 
     def __init__(self):
-        self.consumer_key = os.environ.get("CONSUMER_KEY", None)
-        self.consumer_secret = os.environ.get("CONSUMER_SECRET", None)
-        self.access_token_key = os.environ.get("ACCESS_TOKEN_KEY", None)
-        self.access_token_secret = os.environ.get("ACCESS_TOKEN_SECRET", None)
+        self.consumer_key = environ.get("CONSUMER_KEY", None)
+        self.consumer_secret = environ.get("CONSUMER_SECRET", None)
+        self.access_token_key = environ.get("ACCESS_TOKEN_KEY", None)
+        self.access_token_secret = environ.get("ACCESS_TOKEN_SECRET", None)
         self.api = None
         self.tweets = []
 
     def connect_with_twitter(self):
-        auth = tweepy.OAuthHandler(self.consumer_key, self.consumer_secret)
+        auth = OAuthHandler(self.consumer_key, self.consumer_secret)
         auth.set_access_token(self.access_token_key, self.access_token_secret)
-        self.api = tweepy.API(auth)
+        self.api = API(auth)
 
     def search_tweets(self):
         """"
@@ -41,10 +40,10 @@ class Collect(object):
         self.tweets = self.api.search(q='ufla')
 
     def save(self):
-        file_path = './data/collect_' + strftime("%Y_%m_%d", gmtime())
-        file_trained = open(file_path, 'a')
+        file_path = './data/collect/' + strftime("%Y_%m_%d", gmtime())
+        outfile = open(file_path, 'a')
         for tweet in self.tweets:
-            pickle.dump(tweet, file_trained)
+            dump(tweet._json, outfile, indent=2)
 
-        file_trained.close()
+        outfile.close()
 

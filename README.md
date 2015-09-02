@@ -11,6 +11,13 @@ sudo apt-get install build-essential python-dev python-setuptools \
                      libatlas-dev libatlas3gf-base
 ```
 
+## Dependencies for Python 3
+
+```
+sudo apt-get install python3-minimal
+```
+
+
 ### Libs
 
 ```
