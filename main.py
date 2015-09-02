@@ -3,8 +3,8 @@
 import yaml
 import sys
 from collect.collect import Collect
+from train.train import Train
 from mining.Mining import Mining
-from train.Train import Train
 
 class Cli(object):
     """Command-line Application"""
@@ -42,7 +42,8 @@ if __name__ == '__main__':
             c.search_tweets()
             c.save()
         elif cli.option == "t":
-            Train()
+            t = Train()
+            t.load_files()
         elif cli.option == "p":
             Mining()
 

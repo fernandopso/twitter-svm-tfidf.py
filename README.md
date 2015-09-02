@@ -47,8 +47,8 @@ python main.py
 
 TODO
 
-[ 15% ] Remove PyGTK in favor to use Terminal
+[20%] Remove PyGTK in favor to use Terminal
 
-[     ] Refatory names of methods/variables/modules
+[ 5%] Refatory horrible names of methods/variables/modules
 
-[     ] Test and Documentation
+[ 0%] Test and Documentation
