@@ -24,15 +24,15 @@ class Train(object):
         """
         Open all files in directoy data/collect/ and restore json dump
         """
-        for json_file in self.files:
-            with open(Train.COLLECTION_FOLDER + json_file, 'r') as f:
-                dump = loads(f.read())
-                self.process(dump)
+        for json_file_name in self.files:
+            with open(Train.COLLECTION_FOLDER + json_file_name, 'r') as data:
+                for tweet in data.readlines():
+                    self.tweets.append(loads(tweet))
 
+        return self.tweets
 
-    def process(self, tweets):
-        import ipdb; ipdb.set_trace()
-        for tweet in tweets:
+    def process(self):
+        for tweet in self.tweets:
             #obtem dados do Tweet.
             tweetOriginal = json.dumps(decoded["text"])
             tweetTratado = ""

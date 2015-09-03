@@ -28,6 +28,7 @@ class Collect(object):
         auth = OAuthHandler(self.consumer_key, self.consumer_secret)
         auth.set_access_token(self.access_token_key, self.access_token_secret)
         self.api = API(auth)
+        return self.api
 
     def search_tweets(self):
         """"
@@ -38,12 +39,16 @@ class Collect(object):
         'to', 'source'
         """
         self.tweets = self.api.search(q='ufla')
+        return self.tweets
 
     def save(self):
         file_path = './data/collect/' + strftime("%Y_%m_%d", gmtime())
         outfile = open(file_path, 'a')
         for tweet in self.tweets:
-            dump(tweet._json, outfile, indent=2)
+            dump(tweet._json, outfile)
+            # This is necessary beacause lib json cannot load many jsons
+            # Save a tweet per line and this will work fine
+            outfile.write("\n")
 
         outfile.close()
-
+        return True
