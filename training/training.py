@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from cli import Cli
 
-from modules.processing import Processing
+from processing import Processing
 
 class Training(object):
 
