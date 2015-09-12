@@ -8,10 +8,10 @@ class Collect(object):
     Collect tweet from Twitter
 
     options:
-      --consumer-key    : the twitter consumer key
-      --consumer-secret : the twitter consumer secret
-      --access-key      : the twitter access token key
-      --access-secret   : the twitter access token secret
+        --consumer-key    : the twitter consumer key
+        --consumer-secret : the twitter consumer secret
+        --access-key      : the twitter access token key
+        --access-secret   : the twitter access token secret
     """
 
     def __init__(self):
@@ -30,11 +30,12 @@ class Collect(object):
 
     def search_tweets(self):
         """"
-        reference: https://github.com/tweepy/tweepy/blob/master/tweepy/api.py
+        reference:
+            https://github.com/tweepy/tweepy/blob/master/tweepy/api.py
 
-        :allowed_param: 'q', 'lang', 'locale', 'since_id', 'geocode', max_id',
-        'since', 'until', 'result_type', 'count', 'include_entities', 'from',
-        'to', 'source'
+        allowed_params:
+            'q', 'lang', 'locale', 'since_id', 'geocode', 'since', 'until',
+            'result_type', 'count', 'include_entities', 'from', 'to', 'source'
         """
         self.tweets = self.api.search(q='ufla')
         return self.tweets
