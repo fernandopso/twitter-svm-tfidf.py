@@ -19,6 +19,9 @@ class Cli(object):
         self.option = raw_input("Select an option: ")
         return self.option
 
+    def training(self):
+        print self.text['training']
+
     def clear_terminal(self):
         sys.stderr.write("\x1b[2J\x1b[H")
 

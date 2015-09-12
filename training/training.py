@@ -1,47 +1,33 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from os import listdir
-from json import loads
+from cli import Cli
 
 from modules.processing import Processing
 
 class Training(object):
 
-    COLLECTION_FOLDER = './data/collect/'
     OPTIONS = ["Positive", "Negative", "Neutral", "Unknown"]
 
-    def __init__(self):
-        self.files = listdir(Training.COLLECTION_FOLDER)
+    def __init__(self, datas):
+        self.datas  = datas
         self.tweets = []
         self.tuples = []
 
-    def load_files(self):
+    def process_tweets(self):
         """
-        Open all files in directoy data/collect/ and restore json dump
+        Process all tweets collected
         """
-        for json_file_name in self.files:
-            with open(Training.COLLECTION_FOLDER + json_file_name, 'r') as data:
-                for tweet in data.readlines():
-                    self.tweets.append(loads(tweet))
+        for data in self.datas:
+            t = {
+                'id': data['id'],
+                'user': data['user']['screen_name'],
+                'original': data['text'],
+                'processed': self.process(data['text']),
+                'evaluation': 0
+            }
+            self.tweets.append(t)
 
         return self.tweets
-
-    def display_tweets(self):
-        """
-        Display all tweets collected for training and save in file
-        """
-        for tweet in self.tweets:
-            t = {
-                'id': tweet['id'],
-                'user': tweet['user']['screen_name'],
-                'original': tweet['text'],
-                'processed': self.process(tweet['text']),
-                'evaluation': 'TODO'
-            }
-
-            # TODO: show tweet to user choice an option and save
-
-        return True
 
     def process(self, tweet):
         p = Processing()
@@ -59,3 +45,22 @@ class Training(object):
         tweet = p.stemmizator(tweet)
 
         return tweet
+
+    def evaluate(self):
+        """
+        Display all tweets collected for training
+        """
+        self.process_tweets()
+        cli = Cli()
+
+        for t in self.tweets:
+            print "@%s: %s" % (t['user'], t['original'])
+
+            cli.training()
+            rate = cli.waiting_input()
+
+            t['evaluation'] = rate
+
+            self.tuples.append(t)
+
+        return self.tuples
