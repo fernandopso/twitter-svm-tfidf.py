@@ -2,8 +2,6 @@
 # -*- coding: utf-8 -*-
 from os import environ
 from tweepy import OAuthHandler, API
-from time import gmtime, strftime
-from json import dump
 
 class Collect(object):
     """
@@ -40,15 +38,3 @@ class Collect(object):
         """
         self.tweets = self.api.search(q='ufla')
         return self.tweets
-
-    def save(self):
-        file_path = './data/collect/' + strftime("%Y_%m_%d", gmtime())
-        outfile = open(file_path, 'a')
-        for tweet in self.tweets:
-            dump(tweet._json, outfile)
-            # This is necessary beacause lib json cannot load many jsons
-            # Save a tweet per line and this will work fine
-            outfile.write("\n")
-
-        outfile.close()
-        return True
