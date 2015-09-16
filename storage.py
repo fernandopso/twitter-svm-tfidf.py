@@ -54,10 +54,10 @@ class Storage(object):
         Open all files in directoy data/collect/ and restore json dump
         """
 
-        folder = listdir(Storage.COLLECT_FOLDER)
+        folder = listdir(self.output_type)
 
         for file_name in folder:
-            with open(Storage.COLLECT_FOLDER + file_name, 'r') as data:
+            with open(self.output_type + file_name, 'r') as data:
                 for tweet in data.readlines():
                     self.files.append(loads(tweet))
 

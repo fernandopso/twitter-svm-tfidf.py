@@ -22,15 +22,18 @@ if __name__ == '__main__':
             storage.save()
         elif cli.option == "t":
             # Load files
-            datas = Storage([], 'load').files_collect()
+            data = Storage([], 'collect').files_collect()
 
             # Training of tweets
-            tweets = Training(datas).evaluate()
+            tweets = Training(data).evaluate()
 
             # Save tweets
             Storage(tweets, "trained").save()
         elif cli.option == "p":
-            Mining()
+            collect_files = Storage([], 'collect').files_collect()
+            trained_files = Storage([], 'trained').files_collect()
+
+            Mining(collect_files, trained_files).start()
 
         cli.dashboard()
         cli.waiting_input()

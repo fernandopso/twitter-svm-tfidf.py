@@ -55,10 +55,10 @@ class Training(object):
             print "@%s: %s" % (t['user'], t['original'])
 
             cli.training()
-            rate = cli.waiting_input()
 
-            t['evaluation'] = rate
+            t['evaluation'] = cli.waiting_input()
 
-            self.tuples.append(t)
+            if t['evaluation'] != 4:
+                self.tuples.append(t)
 
         return self.tuples

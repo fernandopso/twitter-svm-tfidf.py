@@ -1,45 +1,28 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from modules.tfidf import tfidf
-from modules.fileDir import fileDir
+from tfidf import TermFrequency
 from modules.formatFile import FormatFile
 from modules.svm import Model
-from modules.check import Check
 
-class Mining:
+class Mining(object):
     """
     Twitter Mining
     """
-    list_tweets = []
-    def __init__(self):
-        if self.file_train == None:
-            print "Você não selecionou nenhum arquivo de treinamento."
+    def __init__(self, file_test, file_train):
+        self.list_tweets = []
+        self.tupleTweetTest = file_test
+        self.tupleTweetTrain = file_train
+        self.vector_train = list()
+        self.train_prediction = list()
+        self.vector_test = list()
 
-        if self.file_test == None:
-            print "Você não selecionou nenhum arquivo de teste."
+    def start(self):
+        idfs, words = TermFrequency(self.tupleTweetTrain).create_vocabulary()
 
-    def on_clickedStart(self, *args):
-        appOpen = fileDir()
-        appTFIDF = tfidf()
+        #=== STOPPED HERE ====================================================#
         appFormat = FormatFile()
-        tupleTweetTrain = []
-        tupleTweetTest = []
-        listWords = []
-        idfs = []
+        self.vector_train, self.train_prediction, self.vector_test = appFormat.formatFile(self.tupleTweetTrain, self.tupleTweetTest, words, idfs)
 
-        vector_train = list()
-        train_prediction = list()
-        vector_test = list()
-        
-        tupleTweetTrain = appOpen.startTrain(self.file_train)
-        print "Tweets Para Treinamento: Ok"
-        tupleTweetTest = appOpen.startTest(self.file_test)
-        print "Tweets Para Teste: Ok"     
-        print "Preparando Dados..."
-        idfs, listWords = appTFIDF.start(tupleTweetTrain)
-        vector_train, train_prediction, vector_test = appFormat.formatFile(tupleTweetTrain, tupleTweetTest, listWords, idfs)
-
-        #=====================================#
         print "Iniciando classicação..."
         appSVM = Model()
         appSVM.svm(vector_train, train_prediction, vector_test)
