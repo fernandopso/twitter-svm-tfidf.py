@@ -6,8 +6,6 @@ from processing import Processing
 
 class Training(object):
 
-    OPTIONS = ["Positive", "Negative", "Neutral", "Unknown"]
-
     def __init__(self, datas):
         self.datas  = datas
         self.tweets = []

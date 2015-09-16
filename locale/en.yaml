@@ -1,7 +1,7 @@
 dashboard: > 
-    Twitter data mining with Suport Vector Machine
+    Twitter Mining - Suport Vector Machine and Term Frequency–Inverse Document Frequency
 
-    ==============================================
+    ====================================================================================
 
 
     The process is divided into three steps to the tweets mining process:
