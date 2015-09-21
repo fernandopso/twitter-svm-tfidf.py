@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from cli import Cli
 from storage import Storage
-from collect.collect import Collect
+from collect import Collect
 from training import Training
 from mining.mining import Mining
 
