@@ -20,29 +20,12 @@ class Training(object):
                 'id': data['id'],
                 'user': data['user']['screen_name'],
                 'original': data['text'],
-                'processed': self.process(data['text']),
+                'processed': Processing(data['text']).execute(),
                 'evaluation': 0
             }
             self.tweets.append(t)
 
         return self.tweets
-
-    def process(self, tweet):
-        p = Processing()
-        tweet = p.lower_case(tweet)
-        tweet = p.accented_letters(tweet)
-        tweet = p.loose_letters(tweet)
-        tweet = p.special_characters(tweet)
-        tweet = p.similar_words(tweet)
-        tweet = p.remove_stopwords(tweet)
-        tweet = p.remove_mentions(tweet)
-        tweet = p.remove_links(tweet)
-        tweet = p.remove_alpha_numeric(tweet)
-        tweet = p.remove_solitary_letters(tweet)
-        tweet = p.remove_spaces(tweet)
-        tweet = p.stemmizator(tweet)
-
-        return tweet
 
     def evaluate(self):
         """
