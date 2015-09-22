@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from tfidf import TermFrequency
 from vectorizer import Vectorizer
-from modules.svm import Model
+from svm import Models
 from training import Training
 
 class Mining(object):
@@ -21,12 +21,11 @@ class Mining(object):
 
         v = Vectorizer(self.trained, self.classify, words, bag_of_words)
 
-        evaluations = v.evaluations
-        tfidf_trained = v.tfidf_for_tweets_trained
+        tfidf_trained     = v.tfidf_for_tweets_trained
+        evaluations       = v.evaluations
         tfidf_to_classify = v.tfidf_for_tweets_to_classify
 
-        #=== STOPPED HERE ====================================================#
-        print "Iniciando classicação..."
-        appSVM = Model()
-        appSVM.svm(tfidf_trained, evaluations, tfidf_to_classify)
-        print "Predição de arquivos finalizada!"
+        models     = Models(tfidf_trained, evaluations, tfidf_to_classify)
+        prediction = models.svm_linear()
+
+        return prediction
