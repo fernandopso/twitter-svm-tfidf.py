@@ -1,7 +1,7 @@
 mining-svm-tfidf
 ================
 
-Course conclusion project for collecting, training, and mining data collected from Twitter using Support Vector Machine and term frequency–inverse document frequency.
+Course project for collecting, training and mining data collected from Twitter using Support Vector Machine and Term Frequency–Inverse Document Frequency.
 
 ## Dependencies
 
@@ -44,11 +44,3 @@ nltk.download()
 ```
 python main.py
 ```
-
-TODO
-
-[30%] Remove PyGTK in favor to use Terminal
-
-[15%] Refatory horrible names of methods/variables/modules
-
-[ 0%] Test and Documentation
