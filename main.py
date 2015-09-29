@@ -14,6 +14,7 @@ if __name__ == '__main__':
 
     while cli.option != "x":
         if cli.option == "h":
+            cli.clear_terminal()
             cli.help()
 
         elif cli.option == "c":
@@ -47,10 +48,26 @@ if __name__ == '__main__':
             data = Storage([], 'trained').load()
             cli.tweets_trained(data)
 
-        elif cli.option == "tweets status":
+        elif cli.option == "tweets trained positive":
+            data = Storage([], 'trained').load()
+            cli.tweets_trained(data, '1')
+
+        elif cli.option == "tweets trained negative":
+            data = Storage([], 'trained').load()
+            cli.tweets_trained(data, '2')
+
+        elif cli.option == "tweets trained neutral":
+            data = Storage([], 'trained').load()
+            cli.tweets_trained(data, '3')
+
+        elif cli.option == "tweets trained unknown":
+            data = Storage([], 'trained').load()
+            cli.tweets_trained(data, '4')
+
+        elif cli.option == "tweets metrics":
             collected = Storage([], 'collect').load()
             trained   = Storage([], 'trained').load()
-            cli.tweets_status(collected, trained)
+            cli.tweets_metrics(collected, trained)
 
         cli.waiting_input()
 

@@ -39,19 +39,28 @@ class Cli(object):
                 date     = tweet['created_at']
             )
 
-    def tweets_trained(self, tweets):
+    def tweets_trained(self, tweets, evaluation = False):
         for tweet in tweets:
-            print self.text['tweet_trained'].format(
-                username   = tweet['user'],
-                tweet      = tweet['original'].encode('ascii', 'ignore'),
-                evaluation = tweet['evaluation']
-            )
+            if evaluation:
+                if evaluation == tweet['evaluation']:
+                    print self.text['tweet_trained'].format(
+                        username   = tweet['user'],
+                        tweet      = tweet['original'].encode('ascii', 'ignore'),
+                        evaluation = tweet['evaluation']
+                    )
 
-    def tweets_status(self, collected, trained):
+            else:
+                print self.text['tweet_trained'].format(
+                    username   = tweet['user'],
+                    tweet      = tweet['original'].encode('ascii', 'ignore'),
+                    evaluation = tweet['evaluation']
+                )
+
+    def tweets_metrics(self, collected, trained):
         quantity_collected = len(collected)
         quantity_trained   = len(trained)
 
-        print self.text['status'].format(
+        print self.text['metrics'].format(
             total   = quantity_collected,
             trained = quantity_trained,
             predict = quantity_collected - quantity_trained

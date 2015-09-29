@@ -28,14 +28,27 @@ help: >
 
     Available commands
 
+
+    tweets metrics
+      ~> you see metrics of all tweets.
+
     tweets
       ~> you see all tweets collected.
 
     tweets trained
       ~> you see all tweets trained
 
-    tweets status
-      ~> you see status of all tweets. Quantity of tweets collected, trained and predicted and available to predict.
+    tweets trained positive
+      ~> you see all tweets trained with evaluation positive
+
+    tweets trained negative
+      ~> you see all tweets trained with evaluation negative
+
+    tweets trained neutral
+      ~> you see all tweets trained with evaluation neutral
+
+    tweets trained unknown
+      ~> you see all tweets trained with evaluation unknown
 
 tweet: >
     @{username}: {tweet}
@@ -47,10 +60,10 @@ tweet_trained: >
 
     Evaluation: {evaluation}
 
-status: >
+metrics: >
 
     Quantity of tweets: {total}
 
-    Trained: {trained}
+    Quantity of tweets trained: {trained}
 
-    Available to predict: {predict}
+    Quantity of tweets available to predict: {predict}
