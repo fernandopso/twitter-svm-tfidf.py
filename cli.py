@@ -46,3 +46,13 @@ class Cli(object):
                 tweet      = tweet['original'].encode('ascii', 'ignore'),
                 evaluation = tweet['evaluation']
             )
+
+    def tweets_status(self, collected, trained):
+        quantity_collected = len(collected)
+        quantity_trained   = len(trained)
+
+        print self.text['status'].format(
+            total   = quantity_collected,
+            trained = quantity_trained,
+            predict = quantity_collected - quantity_trained
+        )

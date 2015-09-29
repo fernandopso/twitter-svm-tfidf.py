@@ -47,6 +47,11 @@ if __name__ == '__main__':
             data = Storage([], 'trained').load()
             cli.tweets_trained(data)
 
+        elif cli.option == "tweets status":
+            collected = Storage([], 'collect').load()
+            trained   = Storage([], 'trained').load()
+            cli.tweets_status(collected, trained)
+
         cli.waiting_input()
 
     cli.finished()

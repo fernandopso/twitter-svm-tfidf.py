@@ -34,6 +34,9 @@ help: >
     tweets trained
       ~> you see all tweets trained
 
+    tweets status
+      ~> you see status of all tweets. Quantity of tweets collected, trained and predicted and available to predict.
+
 tweet: >
     @{username}: {tweet}
 
@@ -43,3 +46,11 @@ tweet_trained: >
     @{username}: {tweet}
 
     Evaluation: {evaluation}
+
+status: >
+
+    Quantity of tweets: {total}
+
+    Trained: {trained}
+
+    Available to predict: {predict}
