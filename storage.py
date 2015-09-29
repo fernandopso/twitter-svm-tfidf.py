@@ -49,7 +49,7 @@ class Storage(object):
 
         return True
 
-    def files_collect(self):
+    def load(self):
         """
         Open all files in directoy data/collect/ and restore json dump
         """

@@ -16,7 +16,7 @@ class Cli(object):
         print self.text['dashboard']
 
     def waiting_input(self):
-        self.option = raw_input("Select an option: ")
+        self.option = raw_input("Type an option: ")
         return self.option
 
     def training(self):
@@ -27,3 +27,22 @@ class Cli(object):
 
     def finished(self):
         print 'Finished'
+
+    def help(self):
+        print self.text['help']
+
+    def tweets_colleted(self, tweets):
+        for tweet in tweets:
+            print self.text['tweet'].format(
+                username = tweet['user']['screen_name'],
+                tweet    = tweet['text'].encode('ascii', 'ignore'),
+                date     = tweet['created_at']
+            )
+
+    def tweets_trained(self, tweets):
+        for tweet in tweets:
+            print self.text['tweet_trained'].format(
+                username   = tweet['user'],
+                tweet      = tweet['original'].encode('ascii', 'ignore'),
+                evaluation = tweet['evaluation']
+            )

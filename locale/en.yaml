@@ -6,6 +6,8 @@ dashboard: >
 
     The process is divided into three steps to the tweets mining process:
 
+    (h) Type “h” and hit the Enter key to see the more help.
+
 
     (c) 1ª step: Collect tweets from Twitter
 
@@ -21,3 +23,23 @@ training: >
 
 
     (1) Positive, (2) Negative, (3) Neutral or (4) Unknown
+
+help: >
+
+    Available commands
+
+    tweets
+      ~> you see all tweets collected.
+
+    tweets trained
+      ~> you see all tweets trained
+
+tweet: >
+    @{username}: {tweet}
+
+    Date: {date}
+
+tweet_trained: >
+    @{username}: {tweet}
+
+    Evaluation: {evaluation}
