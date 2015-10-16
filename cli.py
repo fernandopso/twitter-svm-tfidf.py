@@ -11,13 +11,16 @@ class Cli(object):
     def __init__(self):
         self.text = yaml.load(open(self.file_path).read())
         self.option = False
+        self.args = []
 
     def dashboard(self):
         print self.text['dashboard']
 
     def waiting_input(self):
-        self.option = raw_input("Type an option: ")
-        return self.option
+        raw = raw_input("Type an option: ")
+        self.option = raw.split()[0]
+        self.args   = raw.split()[1:]
+        return self.option, self.args
 
     def training(self):
         print self.text['training']
