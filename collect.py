@@ -14,7 +14,8 @@ class Collect(object):
         --access-secret   : the twitter access token secret
     """
 
-    def __init__(self):
+    def __init__(self, arg):
+        self.arg = arg
         self.consumer_key = environ.get("CONSUMER_KEY", None)
         self.consumer_secret = environ.get("CONSUMER_SECRET", None)
         self.access_token_key = environ.get("ACCESS_TOKEN", None)
@@ -37,5 +38,5 @@ class Collect(object):
             'q', 'lang', 'locale', 'since_id', 'geocode', 'since', 'until',
             'result_type', 'count', 'include_entities', 'from', 'to', 'source'
         """
-        self.tweets = self.api.search(q='ufla')
+        self.tweets = self.api.search(q=self.arg)
         return self.tweets
