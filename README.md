@@ -57,7 +57,18 @@ nltk.download()
 
 A new window should open, showing the NLTK Downloader. Press d and type all
 
-## Finally
+### Environment Variables
+
+Set your twitter credentials from [Twitter Application Manager](https://apps.twitter.com/)
+
+```
+export CONSUMER_KEY="0000000000000000000"
+export CONSUMER_SECRET="1111111111111111"
+export ACCESS_TOKEN="2222222222222222222"
+export ACCESS_TOKEN_SECRET="333333333333"
+```
+
+### Finally
 
 ```
 python main.py

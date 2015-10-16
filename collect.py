@@ -17,7 +17,7 @@ class Collect(object):
     def __init__(self):
         self.consumer_key = environ.get("CONSUMER_KEY", None)
         self.consumer_secret = environ.get("CONSUMER_SECRET", None)
-        self.access_token_key = environ.get("ACCESS_TOKEN_KEY", None)
+        self.access_token_key = environ.get("ACCESS_TOKEN", None)
         self.access_token_secret = environ.get("ACCESS_TOKEN_SECRET", None)
         self.api = None
         self.tweets = []
