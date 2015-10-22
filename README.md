@@ -1,22 +1,13 @@
-mining-svm-tfidf
-================
+Twitter data mining in Python
+==============
 
-Collecting, training and mining data from Twitter using Support Vector Machine and Term Frequency–Inverse Document Frequency.
+Using [Support Vector Machine](https://en.wikipedia.org/wiki/Support_vector_machine) and [Term Frequency–Inverse Document Frequency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
 
-## Tested with Operating System
+The process of data mining can be realized in three steps after clone, install dependencies and configure:
 
-The following operating system versions are supported:
-
-```
-$ lsb_release -a
-Distributor ID:	elementary OS
-Description:	elementary OS Freya
-Release:	0.3.1
-Codename:	freya
-
-$ uname -mrs
-Linux 3.19.0-30-generic x86_64
-```
+1. Collect tweets from Twitter
+2. Train some tweets
+3. Analyze other tweets and predict through pattern recognition
 
 ## Dependencies
 
@@ -73,3 +64,7 @@ export ACCESS_TOKEN_SECRET="333333333333"
 ```
 python main.py
 ```
+
+### New features?
+
+See [roadmap](https://github.com/fernandopso/twitter-svm-tfidf.py/wiki/Roadmap)
