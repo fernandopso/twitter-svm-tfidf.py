@@ -4,7 +4,7 @@ from cli import Cli
 from storage import Storage
 from collector.collect import Collect
 from training import Training
-from mining.mining import Mining
+from miner.mining import Mining
 
 if __name__ == '__main__':
     cli = Cli()

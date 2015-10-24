@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from models import Models
 from tfidf import TermFrequency
 from vectorizer import Vectorizer
-from models import Models
 from training import Training
 
 class Mining(object):
