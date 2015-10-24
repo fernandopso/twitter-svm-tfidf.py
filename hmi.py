@@ -1,10 +1,10 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
-from cli import Cli
-from storage import Storage
 from collector.collect import Collect
-from training import Training
 from miner.mining import Mining
+from storer.storage import Storage
+from trainer.training import Training
+from cli import Cli
 
 if __name__ == '__main__':
     """
@@ -47,6 +47,7 @@ if __name__ == '__main__':
 
             Mining(collect_files, trained_files).start()
 
+        # TODO: Use command options and arguments
         elif cli.option == 'tweets':
             data = Storage([], 'collected').load()
             cli.tweets_colleted(data)
