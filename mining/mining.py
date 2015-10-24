@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from tfidf import TermFrequency
 from vectorizer import Vectorizer
-from svm import Models
+from models import Models
 from training import Training
 
 class Mining(object):

@@ -4,10 +4,6 @@
 from sklearn import svm
 
 class Models(object):
-    """
-    Describe a 
-    """
-
     def __init__(self, trained, evaluations, classify):
         self.trained     = trained
         self.evaluations = evaluations
