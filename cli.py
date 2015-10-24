@@ -68,3 +68,7 @@ class Cli(object):
             trained = quantity_trained,
             predict = quantity_collected - quantity_trained
         )
+
+    def error(self, option):
+        if option == "c":
+            print self.text['error']['arg_not_found']

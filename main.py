@@ -18,11 +18,14 @@ if __name__ == '__main__':
             cli.help()
 
         elif cli.option == "c":
-            c = Collect(cli.args[0])
-            c.connect_with_twitter()
-            tweets = c.search_tweets()
-            storage = Storage(tweets, "collect")
-            storage.save()
+            if not cli.args:
+                cli.error(cli.option)
+            else:
+                c = Collect(cli.args[0])
+                c.connect_with_twitter()
+                tweets = c.search_tweets()
+                storage = Storage(tweets, "collect")
+                storage.save()
 
         elif cli.option == "t":
             # Load files

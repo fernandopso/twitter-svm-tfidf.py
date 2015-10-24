@@ -1,4 +1,4 @@
-dashboard: > 
+dashboard: >
     Twitter Mining - Suport Vector Machine and Term Frequency–Inverse Document Frequency
 
     ====================================================================================
@@ -67,3 +67,11 @@ metrics: >
     Quantity of tweets trained: {trained}
 
     Quantity of tweets available to predict: {predict}
+
+error:
+    arg_not_found: >
+
+        Argument for search tweets no found!
+
+
+        For collect tweets with word python, type: c python
