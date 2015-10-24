@@ -59,10 +59,10 @@ export ACCESS_TOKEN="2222222222222222222"
 export ACCESS_TOKEN_SECRET="333333333333"
 ```
 
-### Finally
+### Start the Human-Machine Interface
 
 ```
-python main.py
+python hmi.py
 ```
 
 ### New features?

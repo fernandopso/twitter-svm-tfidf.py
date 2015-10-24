@@ -7,6 +7,9 @@ from training import Training
 from miner.mining import Mining
 
 if __name__ == '__main__':
+    """
+    Human-Machine Interface
+    """
     cli = Cli()
     cli.clear_terminal()
     cli.dashboard()
