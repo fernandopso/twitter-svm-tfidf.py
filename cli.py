@@ -17,7 +17,7 @@ class Cli(object):
         print self.text['dashboard']
 
     def waiting_input(self):
-        raw = raw_input("Type an option: ")
+        raw = raw_input('Type an option: ')
         self.option = raw.split()[0]
         self.args   = raw.split()[1:]
         return self.option, self.args
@@ -70,5 +70,9 @@ class Cli(object):
         )
 
     def error(self, option):
-        if option == "c":
+        if option == 'c':
             print self.text['error']['arg_not_found']
+
+    def success(self, option):
+        if option == 'c':
+            print self.text['success']['collected']

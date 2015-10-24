@@ -75,3 +75,6 @@ error:
 
 
         For collect tweets with word python, type: c python
+
+success:
+    collected: "Successfully collected Tweets"
