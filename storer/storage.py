@@ -13,16 +13,14 @@ class Storage(object):
         @output_type is a type for save in the correct folder
     """
 
-    COLLECT_FOLDER = './data/collect/'
-    TRAINED_FOLDER = './data/trained/'
+    FOLDERS = {
+        'collected': './data/collected/',
+        'trained': './data/trained/'
+    }
 
     def __init__(self, files, output_type):
         self.files = files
-
-        if output_type == 'collect':
-            self.output_type = Storage.COLLECT_FOLDER
-        elif output_type == 'trained':
-            self.output_type = Storage.TRAINED_FOLDER
+        self.output_type = Storage.FOLDERS[output_type]
 
     def save(self):
         """"
@@ -51,7 +49,7 @@ class Storage(object):
 
     def load(self):
         """
-        Open all files in directoy data/collect/ and restore json dump
+        Restore all files collected and return a json of tweets
         """
 
         folder = listdir(self.output_type)

@@ -1,69 +1,79 @@
-dashboard: > 
-    Twitter Mining - Suport Vector Machine and Term Frequency–Inverse Document Frequency
+dashboard: >
+  Twitter Mining - Suport Vector Machine and Term Frequency–Inverse Document Frequency
 
-    ====================================================================================
-
-
-    The process is divided into three steps to the tweets mining process:
-
-    (h) Type “h” and hit the Enter key to see the more help.
+  ====================================================================================
 
 
-    (c) 1ª step: Collect tweets from Twitter
+  The process is divided into three steps to the tweets mining process:
 
-    (t) 2ª step: Training some tweets
+  (h) Type “h” and hit the Enter key to see the more help.
 
-    (p) 3ª step: Predication others tweets
 
-    (x) for exit
+  (c) 1ª step: Collect tweets from Twitter
+
+  (t) 2ª step: Training some tweets
+
+  (p) 3ª step: Predication others tweets
+
+  (x) for exit
 
 training: >
 
-    How would you rate this tweet?
+  How would you rate this tweet?
 
 
-    (1) Positive, (2) Negative, (3) Neutral or (4) Unknown
+  (1) Positive, (2) Negative, (3) Neutral or (4) Unknown
 
 help: >
 
-    Available commands
+  Available commands
 
 
-    tweets metrics
-      ~> you see metrics of all tweets.
+  tweets metrics
+    ~> you see metrics of all tweets.
 
-    tweets
-      ~> you see all tweets collected.
+  tweets
+    ~> you see all tweets collected.
 
-    tweets trained
-      ~> you see all tweets trained
+  tweets trained
+    ~> you see all tweets trained
 
-    tweets trained positive
-      ~> you see all tweets trained with evaluation positive
+  tweets trained positive
+    ~> you see all tweets trained with evaluation positive
 
-    tweets trained negative
-      ~> you see all tweets trained with evaluation negative
+  tweets trained negative
+    ~> you see all tweets trained with evaluation negative
 
-    tweets trained neutral
-      ~> you see all tweets trained with evaluation neutral
+  tweets trained neutral
+    ~> you see all tweets trained with evaluation neutral
 
-    tweets trained unknown
-      ~> you see all tweets trained with evaluation unknown
+  tweets trained unknown
+    ~> you see all tweets trained with evaluation unknown
 
 tweet: >
-    @{username}: {tweet}
+  @{username}: {tweet}
 
-    Date: {date}
+  Date: {date}
 
 tweet_trained: >
-    @{username}: {tweet}
+  @{username}: {tweet}
 
-    Evaluation: {evaluation}
+  Evaluation: {evaluation}
 
 metrics: >
 
-    Quantity of tweets: {total}
+  Quantity of tweets: {total}
 
-    Quantity of tweets trained: {trained}
+  Quantity of tweets trained: {trained}
 
-    Quantity of tweets available to predict: {predict}
+  Quantity of tweets available to predict: {predict}
+
+error:
+  arg_not_found: >
+    Argument for search tweets no found!
+
+
+    Example for collect tweets with word python, type: c python
+
+success:
+  collected: "Successfully collected Tweets"
