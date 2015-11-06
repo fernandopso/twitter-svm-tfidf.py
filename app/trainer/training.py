@@ -1,6 +1,6 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
-from cli import Cli
+from app.cli import Cli
 
 from processing import Processing
 

@@ -6,3 +6,4 @@ numpy==1.9.2
 scipy==0.16.0
 scikit-learn==0.16.1
 tweepy==3.4.0
+glob==0.4.1

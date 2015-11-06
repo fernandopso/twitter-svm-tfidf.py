@@ -2,14 +2,15 @@
 # -*- coding: utf-8 -*-
 import yaml
 import sys
+from glob2 import glob
 
 class Cli(object):
     """Command-line Application"""
 
-    file_path = './locale/en.yaml'
+    file_path = '**/locale/en.yaml'
 
     def __init__(self):
-        self.text = yaml.load(open(self.file_path).read())
+        self.text = yaml.load(open(glob(self.file_path)[0]).read())
         self.option = False
         self.args = []
 
