@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 from os import listdir
 from time import gmtime, strftime
@@ -6,11 +6,19 @@ from json import dump, loads
 
 class Storage(object):
     """
-    Classe for save and open files
+    Save and open files
 
     required params:
-        @files is a list of json
-        @output_type is a type for save in the correct folder
+        @files is a list of json for *save* or *load*
+
+        @output_type is a type for *save* or *load* from data folder
+            Paths can be accessible by key *collected* or *trained* in FOLDERS
+
+            Ex.: Storage([{"a":"z"}], 'collected').save()
+                 Storage([{"a":"z"}], 'trained').save()
+
+                 Storage([], 'trained').load()
+                 Storage([], 'collected').load()
     """
 
     FOLDERS = {
@@ -24,13 +32,12 @@ class Storage(object):
 
     def save(self):
         """"
-        Save file of json in file
+        Save file of json in file with name like 2015_09_30
         """
 
-        # Create file path based in output type for current date
+        # Create filename based in output type
         f = self.output_type + '/' + strftime("%Y_%m_%d", gmtime())
 
-        # Open file
         outfile = open(f, 'a')
 
         for json in self.files:
@@ -49,9 +56,8 @@ class Storage(object):
 
     def load(self):
         """
-        Restore all files collected and return a json of tweets
+        Restore all files collected or trained and return a json of tweets
         """
-
         folder = listdir(self.output_type)
 
         for file_name in folder:

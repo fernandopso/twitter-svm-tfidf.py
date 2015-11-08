@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from app.collector.collect import Collect
 from app.miner.mining import Mining
-from app.storer.storage import Storage
+from app.storage import Storage
 from app.trainer.training import Training
 from app.cli import Cli
 
