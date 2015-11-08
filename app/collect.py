@@ -7,11 +7,16 @@ class Collect(object):
     """
     Collect tweet from Twitter
 
-    options:
+    environments vars:
         --consumer-key    : the twitter consumer key
         --consumer-secret : the twitter consumer secret
         --access-key      : the twitter access token key
         --access-secret   : the twitter access token secret
+
+    required params:
+        @arg is a argument for query in Twitter
+
+        Ex.: Collect("python").search()
     """
 
     def __init__(self, arg):
@@ -20,7 +25,7 @@ class Collect(object):
         self.consumer_secret = environ.get("CONSUMER_SECRET", None)
         self.access_token_key = environ.get("ACCESS_TOKEN", None)
         self.access_token_secret = environ.get("ACCESS_TOKEN_SECRET", None)
-        self.api = None
+        self.api = self.connect_with_twitter()
         self.tweets = []
 
     def connect_with_twitter(self):
@@ -29,7 +34,7 @@ class Collect(object):
         self.api = API(auth)
         return self.api
 
-    def search_tweets(self):
+    def search(self):
         """"
         reference:
             https://github.com/tweepy/tweepy/blob/master/tweepy/api.py

@@ -1,6 +1,6 @@
 # !/usr/bin/env python
 # -*- coding: utf-8 -*-
-from app.collector.collect import Collect
+from app.collect import Collect
 from app.miner.mining import Mining
 from app.storage import Storage
 from app.trainer.training import Training
@@ -24,11 +24,8 @@ if __name__ == '__main__':
             if not cli.args:
                 cli.error(cli.option)
             else:
-                c = Collect(cli.args[0])
-                c.connect_with_twitter()
-                tweets = c.search_tweets()
-                storage = Storage(tweets, 'collected')
-                storage.save()
+                tweets = Collect(cli.args[0]).search()
+                Storage(tweets, 'collected').save()
                 cli.success(cli.option)
 
         elif cli.option == 't':
