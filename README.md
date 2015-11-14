@@ -59,12 +59,16 @@ export ACCESS_TOKEN="2222222222222222222"
 export ACCESS_TOKEN_SECRET="333333333333"
 ```
 
+### Run tests
+
+```
+python -m unittest discover
+```
+
 ### Start the Human-Machine Interface
 
 ```
 python hmi.py
 ```
 
-### New features?
-
-See [roadmap](https://github.com/fernandopso/twitter-svm-tfidf.py/wiki/Roadmap)
+The [roadmap](https://github.com/fernandopso/twitter-svm-tfidf.py/wiki/Roadmap)
