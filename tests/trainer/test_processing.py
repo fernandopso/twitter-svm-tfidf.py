@@ -9,7 +9,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertEqual(tweet, "processing can be lower case tweet")
 
     def test_accented_letters(self):
-        """This is a context of test to UNICODE_ACCENTED_LETTERS constant"""
+        """Codes and values from UNICODE_ACCENTED_LETTERS"""
 
         tweet = Processing("tweet with code \u00e0").accented_letters()
         self.assertEqual(tweet, "tweet with code a")
