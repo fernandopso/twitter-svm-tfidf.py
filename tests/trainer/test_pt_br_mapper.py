@@ -5,7 +5,7 @@ from app.trainer.pt_br_mapper import SPECIAL_CHARACTERS
 from app.trainer.pt_br_mapper import SIMILAR_WORDS
 from app.trainer.pt_br_mapper import SOLITARY_LETTERS
 
-class Mapper(unittest.TestCase):
+class TestPtBrMapper(unittest.TestCase):
 
     def test_key_in_unicode_accented_letters(self):
         keys = UNICODE_ACCENTED_LETTERS.keys()
