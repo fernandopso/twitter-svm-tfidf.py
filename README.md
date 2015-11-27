@@ -1,6 +1,8 @@
 Twitter data mining in Python
 ==============
 
+[![Build Status](https://travis-ci.org/fernandopso/twitter-svm-tfidf.py.svg?branch=master)](https://travis-ci.org/fernandopso/twitter-svm-tfidf.py)
+
 Using [Support Vector Machine](https://en.wikipedia.org/wiki/Support_vector_machine) and [Term Frequency–Inverse Document Frequency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
 
 The process of data mining can be realized in three steps after clone this repository, install OS dependencies and configure your credentials of Twitter:

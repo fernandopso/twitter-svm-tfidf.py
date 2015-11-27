@@ -2,10 +2,6 @@ language: python
 
 python:
   - "2.7"
-  - "3.2"
-  - "3.3"
-  - "3.4"
-  - "3.5"
 
 before_install:
   - sudo apt-get update
@@ -22,6 +18,7 @@ before_install:
   - sudo apt-get install -y libatlas-base-dev
   - sudo apt-get install -y python3-minimal
 
-install: "pip install -r requirements.txt"
+install:
+  - travis_wait pip install -r requirements.txt
 
 script: python -m unittest discover
