@@ -3,15 +3,13 @@ Twitter data mining in Python
 
 [![Build Status](https://travis-ci.org/fernandopso/twitter-svm-tfidf.py.svg?branch=master)](https://travis-ci.org/fernandopso/twitter-svm-tfidf.py)
 
-Using [Support Vector Machine](https://en.wikipedia.org/wiki/Support_vector_machine) and [Term Frequency–Inverse Document Frequency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf).
+Using [Support Vector Machine](https://en.wikipedia.org/wiki/Support_vector_machine) and [Term Frequency–Inverse Document Frequency](https://en.wikipedia.org/wiki/Tf%E2%80%93idf) in three steps:
 
-The process of data mining can be realized in three steps after clone this repository, install OS dependencies and configure your credentials of Twitter:
+  1. Collect many tweets from Twitter
+  2. Classify some tweets with **positive**, **negative** or **neutral**
+  3. Predict others tweets
 
-  1. Collect tweets from Twitter
-  2. Train some tweets
-  3. Analyze other tweets and predict through pattern recognition
-
-## Operating System dependencies
+## System dependencies
 
 ```
 sudo apt-get install build-essential python-dev python-setuptools \
@@ -27,38 +25,42 @@ sudo apt-get install python3-minimal
 ```
 
 
-### Python Packages required
+### Install Packages
 
-Install with [pip](https://pip.pypa.io/en/stable/)
+Use [pip](https://pip.pypa.io/en/stable/)
 
 ```
 pip install -r requirements.txt
 ```
 
-after install Python Packages you need download the [Natural Language Toolkit](http://www.nltk.org/)
+*It can take a long time*
+
+Download all packages of [Natural Language Toolkit](http://www.nltk.org/)
 
 ```
 python -m nltk.downloader all
 ```
 
-Or download from **Python Interpreter**
+Or download the packages of your choice from **Python Interpreter**
 
 ```
-import nltk
-nltk.download()
+>>> import nltk
+>>> nltk.download()
 ```
 
-A new window should open, showing the NLTK Downloader. Press d and type all
+There are many packages in different languages and formats as **twitter samples**, **RSLP Stemmer** (*Removedor de Sufixos da Lingua Portuguesa*), complete work of Machado de Assis for Brazilian Portuguese language.
 
-### Environment Variables
+### Configuration
 
-Set your twitter credentials from [Twitter Application Manager](https://apps.twitter.com/)
+Set your twitter credentials from [Twitter Application Manager](https://apps.twitter.com/) for variables: *CONSUMER_KEY*, *CONSUMER_SECRET*, *ACCESS_TOKEN* and *ACCESS_TOKEN_SECRET*.
+
+
+### Start
+
+Use the Human-Machine Interface
 
 ```
-export CONSUMER_KEY="0000000000000000000"
-export CONSUMER_SECRET="1111111111111111"
-export ACCESS_TOKEN="2222222222222222222"
-export ACCESS_TOKEN_SECRET="333333333333"
+python hmi.py
 ```
 
 ### Run tests
@@ -67,10 +69,4 @@ export ACCESS_TOKEN_SECRET="333333333333"
 python -m unittest discover
 ```
 
-### Start the Human-Machine Interface
-
-```
-python hmi.py
-```
-
-The [roadmap](https://github.com/fernandopso/twitter-svm-tfidf.py/wiki/Roadmap)
+[Roadmap](https://github.com/fernandopso/twitter-svm-tfidf.py/wiki/Roadmap)
