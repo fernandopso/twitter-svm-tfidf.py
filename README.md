@@ -9,7 +9,7 @@ Using [Support Vector Machine](https://en.wikipedia.org/wiki/Support_vector_mach
   2. Classify some tweets with **positive**, **negative** or **neutral**
   3. Predict others tweets
 
-## System dependencies
+### System dependencies
 
 ```
 sudo apt-get install build-essential python-dev python-setuptools \
@@ -27,7 +27,7 @@ sudo apt-get install python3-minimal
 
 ### Install Packages
 
-Use [pip](https://pip.pypa.io/en/stable/)
+Use [pip](https://pip.pypa.io/en/stable/) with [virtualenv](https://virtualenv.readthedocs.org/en/latest/)
 
 ```
 pip install -r requirements.txt
@@ -35,29 +35,33 @@ pip install -r requirements.txt
 
 *It can take a long time*
 
-Download all packages of [Natural Language Toolkit](http://www.nltk.org/)
+### Configuration
+
+The [Natural Language Toolkit](http://www.nltk.org/) provide human language data (over 50 corpora and lexical resources) in different languages and formats as **twitter samples**, **RSLP Stemmer** (*Removedor de Sufixos da Lingua Portuguesa*), complete work of Machado de Assis for Brazilian Portuguese language and much more.
+
+For download all corpora
 
 ```
 python -m nltk.downloader all
 ```
 
-Or download the packages of your choice from **Python Interpreter**
+Or download the corpora of your choice from **Python Interpreter**
 
 ```
 >>> import nltk
 >>> nltk.download()
 ```
 
-There are many packages in different languages and formats as **twitter samples**, **RSLP Stemmer** (*Removedor de Sufixos da Lingua Portuguesa*), complete work of Machado de Assis for Brazilian Portuguese language.
+A new window should open, showing the NLTK Downloader.
 
-### Configuration
+### Credentials
 
-Set your twitter credentials from [Twitter Application Manager](https://apps.twitter.com/) for variables: *CONSUMER_KEY*, *CONSUMER_SECRET*, *ACCESS_TOKEN* and *ACCESS_TOKEN_SECRET*.
+Set your Twitter credentials from [Twitter Application Manager](https://apps.twitter.com/) for variables: *CONSUMER_KEY*, *CONSUMER_SECRET*, *ACCESS_TOKEN* and *ACCESS_TOKEN_SECRET*.
 
 
 ### Start
 
-Use the Human-Machine Interface
+Run the Human-Machine Interface
 
 ```
 python hmi.py
