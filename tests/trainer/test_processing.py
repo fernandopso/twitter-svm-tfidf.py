@@ -10,10 +10,14 @@ class TestProcessing(unittest.TestCase):
         self.assertEqual(tweet, "processing can be lower case tweet")
 
     def test_accented_letters(self):
-        """Codes and values from UNICODE_ACCENTED_LETTERS"""
+        """Accentuation codes from UNICODE_ACCENTED_LETTERS"""
 
-        text = "tweet with code {0} and another words"
+        text = "tweet with accent {0} and another words"
 
         for code in UNICODE_ACCENTED_LETTERS.items():
-            tweet = Processing(text.format(code[0])).accented_letters()
-            self.assertEqual(tweet, text.format(code[1]))
+            text_parsed = text.format(code[0])
+            text_result = text.format(code[1])
+
+            text_proccessed = Processing(text_parsed).accented_letters()
+
+            self.assertEqual(text_proccessed, text_result)
