@@ -2,3 +2,5 @@
 *.swp
 build/
 
+data/collected/*
+data/trained/*
