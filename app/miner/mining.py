@@ -3,15 +3,14 @@
 from models import Models
 from tfidf import TermFrequency
 from vectorizer import Vectorizer
-from training import Training
 
 class Mining(object):
     """
     Twitter Mining
     """
-    def __init__(self, file_test, trained):
+    def __init__(self, classify, trained):
         # list of tweets to classify
-        self.classify = Training(file_test).process_tweets()
+        self.classify = classify
 
         # list of tweets trained
         self.trained = trained

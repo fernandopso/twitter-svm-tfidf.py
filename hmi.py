@@ -15,7 +15,9 @@ if __name__ == '__main__':
     cli.dashboard()
     cli.waiting_input()
 
-    while cli.option != 'x':
+    if cli.option == 'x':
+        cli.finished()
+    else:
         if cli.option == 'h':
             cli.clear_terminal()
             cli.help()
@@ -40,7 +42,9 @@ if __name__ == '__main__':
 
         elif cli.option == 'p':
             collect_files = Storage([], 'collected').load()
+
             trained_files = Storage([], 'trained').load()
+            trained_files = Training(trained_files).process_tweets()
 
             Mining(collect_files, trained_files).start()
 
@@ -75,5 +79,3 @@ if __name__ == '__main__':
             cli.tweets_metrics(collected, trained)
 
         cli.waiting_input()
-
-    cli.finished()
