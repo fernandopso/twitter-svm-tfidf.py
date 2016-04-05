@@ -30,6 +30,4 @@ class Models(object):
         print "Neutral: %d tweets" % self.result.count(3)
         print "Unknown: %d tweets" % self.result.count(4)
 
-        raw_input("\nPress enter for continue...")
-
         return prediction
