@@ -23,6 +23,9 @@ class Cli(object):
         self.args   = raw.split()[1:]
         return self.option, self.args
 
+    def training_title(self):
+        print self.text['training_title']
+
     def training(self):
         print self.text['training']
 
@@ -77,3 +80,6 @@ class Cli(object):
     def success(self, option):
         if option == 'c':
             print self.text['success']['collected']
+
+    def divider(self):
+        print self.text['divider']

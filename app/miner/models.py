@@ -15,7 +15,6 @@ class Models(object):
         Classification tweets with linear Support Vector Machine
         """
         classification = svm.SVC(kernel='linear')
-
         classification.fit(self.trained, self.evaluations)
 
         prediction = classification.predict(self.classify)

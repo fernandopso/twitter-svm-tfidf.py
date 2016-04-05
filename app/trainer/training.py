@@ -33,15 +33,24 @@ class Training(object):
         """
         self.process_tweets()
         cli = Cli()
+        cli.training_title()
 
         for t in self.tweets:
-            print "@%s: %s" % (t['user'], t['original'])
+            print "@%s say:" % t['user']
+            print "\n"
+            print t['original']
 
             cli.training()
 
-            t['evaluation'] = cli.waiting_input()
+            evaluation = cli.waiting_input()
+            t['evaluation'] = evaluation[0]
 
             if t['evaluation'] != 4:
                 self.tuples.append(t)
+
+            cli.divider()
+
+        cli.clear_terminal()
+        cli.dashboard()
 
         return self.tuples

@@ -31,7 +31,7 @@ def training():
 def prediction():
     collect_files = Storage('collected').load()
     trained_files = Storage('trained').load()
-    trained_files = Training(trained_files).process_tweets()
+
     Mining(collect_files, trained_files).start()
 
 if __name__ == '__main__':
@@ -41,16 +41,14 @@ if __name__ == '__main__':
     cli = Cli()
     start(cli)
 
-    if cli.option == 'x':
-        cli.finished()
-    else:
+    while cli.option != 'x':
         if cli.option == 'h':
             display_help(cli)
-        elif cli.option == 'c':
+        elif cli.option == 'c' or cli.option == "collect":
             collect(cli)
-        elif cli.option == 't':
+        elif cli.option == 't' or cli.option == "training":
             training()
-        elif cli.option == 'p':
+        elif cli.option == 'p' or cli.option == "prediction":
             prediction()
         elif cli.option == 'tweets':
             data = Storage('collected').load()
@@ -64,3 +62,5 @@ if __name__ == '__main__':
             cli.tweets_metrics(collected, trained)
 
         cli.waiting_input()
+
+    cli.finished()
